@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.Socket;
 import java.text.MessageFormat;
 import java.util.Date;
-
+import java.util.Date;
 
 public class Servant implements Runnable {
     private ObjectOutputStream out = null;
@@ -38,6 +38,17 @@ public class Servant implements Runnable {
 
             case Message.CHAT:
                 this.write(message);
+                Date date = new Date();
+                String str="time";
+                if(this.source== message.getSource())
+                {
+                    if (this.toString()==str)
+                    {
+                        System.out.println(date.toString());
+                    }
+                }
+
+
                 break;
 
             case Message.LOGIN:
